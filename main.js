@@ -14,6 +14,12 @@ const packagesGraphs = {
   ms: [],
 };
 
+function printSequence(sequence) {
+  sequence.forEach((item, index) => {
+    console.log(`${index + 1}: ${item}`);
+  });
+}
+
 function dfs(graph) {
   const path = [];
   const stack = [];
@@ -37,6 +43,7 @@ function dfs(graph) {
   return stack;
 }
 const sequence = dfs(packagesGraphs);
+printSequence(sequence);
 // const express = new Node('express', ['accepts', 'array-flatten', 'content-disposition', '...']);
 // const cookieParser = new Node('cookie-parser', ['cookie', 'debug', 'depd', '...']);
 // const debug = new Node('debug', ['ms', '...']);
