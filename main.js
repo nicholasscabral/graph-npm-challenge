@@ -1,10 +1,17 @@
-const graph = {
-  A: ["B", "C"],
-  B: ["D", "E"],
-  C: ["E", "F"],
-  D: ["E"],
-  E: [],
-  F: ["E"],
+const packagesGraphs = {
+  express: ["array-flatten", "body-parser"],
+  accepts: ["mime-types", "negotiator"],
+  "array-flatten": [],
+  "body-parser": ["bytes", "content-type", "debug", "qs"],
+  bytes: [],
+  "content-type": ["mime-types"],
+  debug: ["ms"],
+  "mime-types": ["mime-db"],
+  "mime-db": [],
+  negotiator: ["accepts"],
+  qs: ["side-channel"],
+  "side-channel": [],
+  ms: [],
 };
 
 function dfs(graph) {
@@ -29,10 +36,7 @@ function dfs(graph) {
 
   return stack;
 }
-const sequence = dfs(graph);
-
-console.log({ sequence });
-
+const sequence = dfs(packagesGraphs);
 // const express = new Node('express', ['accepts', 'array-flatten', 'content-disposition', '...']);
 // const cookieParser = new Node('cookie-parser', ['cookie', 'debug', 'depd', '...']);
 // const debug = new Node('debug', ['ms', '...']);
