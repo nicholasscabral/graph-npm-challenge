@@ -44,7 +44,3 @@ function dfs(graph) {
 }
 const sequence = dfs(packagesGraphs);
 printSequence(sequence);
-// const express = new Node('express', ['accepts', 'array-flatten', 'content-disposition', '...']);
-// const cookieParser = new Node('cookie-parser', ['cookie', 'debug', 'depd', '...']);
-// const debug = new Node('debug', ['ms', '...']);
-// const accepts = new Node('accepts', ['mime-types', 'negotiator', '...']);
