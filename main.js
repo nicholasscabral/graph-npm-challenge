@@ -19,26 +19,26 @@ function printSequence(sequence) {
 }
 
 function dfs(graph) {
-  const path = [];
-  const stack = [];
+  const known = [];
+  const installed = [];
 
   function dfsHelper(package) {
-    path.push(package);
+    known.push(package);
     for (const dep of graph[package]) {
-      if (!path.includes(dep)) {
+      if (!known.includes(dep)) {
         dfsHelper(dep);
       }
     }
-    stack.push(package);
+    installed.push(package);
   }
 
   for (const package in graph) {
-    if (!path.includes(package)) {
+    if (!known.includes(package)) {
       dfsHelper(package);
     }
   }
 
-  return stack;
+  return installed;
 }
 const sequence = dfs(packagesGraphs);
 printSequence(sequence);
