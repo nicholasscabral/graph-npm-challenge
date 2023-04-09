@@ -1,20 +1,18 @@
 const packagesGraphs = {
-  express: ["array-flatten", "body-parser"],
-  accepts: ["mime-types", "negotiator"],
+  express: ["array-flatten", "accepts", "body-parser"],
+  accepts: ["mime-types"],
   "array-flatten": [],
-  "body-parser": ["bytes", "content-type", "debug", "qs"],
+  "body-parser": ["bytes", "content-type", "debug"],
   bytes: [],
   "content-type": ["mime-types"],
   debug: ["ms"],
   "mime-types": ["mime-db"],
   "mime-db": [],
-  negotiator: ["accepts"],
-  qs: ["side-channel"],
-  "side-channel": [],
   ms: [],
 };
 
 function printSequence(sequence) {
+  console.log("Installation order");
   sequence.forEach((item, index) => {
     console.log(`${index + 1}: ${item}`);
   });
